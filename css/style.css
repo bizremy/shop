@@ -1,0 +1,313 @@
+
+@font-face {
+    font-family: 'AC Line';
+    src: url('fonts/ac_line.eot');
+    src: url('fonts/ac_line.eot?#iefix') format('embedded-opentype'),
+    url('fonts/ac_line.woff') format('woff'),
+    url('fonts/ac_line.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'corkiregular';
+    src: url('fonts/corki-regular.eot');
+    src: url('fonts/corki-regular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/corki-regular.woff') format('woff'),
+    url('fonts/corki-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin:0;
+    padding:0;
+    color:#070707;
+	background-image: url(../images/2.jpg);
+	background-color:#343434;
+	background-repeat: no-repeat;
+	background-position: center center;      
+    background-attachment: fixed; 
+    background-size: cover;
+
+	}
+#wrap {
+
+    width:1310px;
+    margin:0 auto;
+    background:rgba(255, 255, 255, 0);
+     padding-top: 100px;
+	}
+#nav {
+    font-family: AC Line;
+    position:absolute;
+    margin-top: 0px;
+    height: 60px;
+	width: 100%;
+	background-color: rgba(243, 245, 240, 0.47);
+    
+		
+    }
+#nav ul {
+ 	list-style: none;
+	padding: 0;
+	margin: 0;
+	 position: relative;
+   left:50%;
+    float:left;
+ 
+    }
+#nav li {
+   	text-align: center;
+  position:relative;
+    left:-50%;
+    float:left;
+
+    
+    }
+#nav li a{
+	text-decoration: none;
+	color: #1f2324;
+	font-size: 28px;
+	height: 60px;
+    padding: 0px 10px;
+	display: block;
+	line-height: 60px;	
+	border-right:  solid 1px   #727272;
+    }
+#nav li a:hover{
+    display: block;
+    color: #f1f5ef;
+    background:rgba(183, 18, 18, 0.9);
+}
+
+
+#main {
+    color: #232423;
+    margin-top:5px;
+    float:right;
+    width:950px;
+    padding:20px;
+    background: rgba(243, 245, 240, 0.92);
+    border-radius: 5px;
+    box-shadow: 5px 6px 8px rgba(28, 28, 28, 0.88);
+    }
+    
+#sidebar {
+    font-family: corkiregular;
+    float:left;
+    margin: 20px auto auto 20px;
+	border-radius: 3px;
+	width: 260px;
+	height: auto;
+	background-color: rgba(243, 245, 240, 0.18);
+    }
+#sidebar ul{
+    list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#sidebar li a{
+    
+	text-decoration:none;
+	color:#f1f5ef;
+	font-size: 18px;
+	height: 40px;
+	padding: 0px 5px;
+	display: block;
+	line-height: 35px;	
+	border:solid 1px   rgba( 229, 229, 229, 0.186 );
+}
+#sidebar li a:hover{
+    padding-right: 5px;
+    background: rgba(243, 245, 240, 0.85);
+    color: #181818;
+    border:solid 1px rgba(241, 49, 77, 0.64);
+
+}
+#sidebar h1
+{
+    font-family: AC Line;
+    text-align:  center;
+	font-size: 22px;
+	margin: 0px;
+    padding: 0px;
+	line-height: 35px;
+	border:solid 1px   rgba( 234, 234, 234, 0.606 );
+}
+#footer {
+    font-size: 12px;
+    text-align: center;
+    height:25px;
+     position:fixed;
+     bottom:0;
+    width:100%;
+    background:rgba(23, 23, 23, 0.55);
+    color: rgba(240, 240, 240, 0.94);
+    }
+
+
+table {
+    overflow:hidden;
+    color: #181818;
+
+
+}
+
+th, td {
+    border:1px solid #181818;
+    padding:5px;
+    text-align:center;
+    border-radius:3px;
+}
+
+th {
+    padding-top:22px;
+    font-size: 15px;
+
+}
+.delete span
+{
+    display: none;
+}
+.delete{
+    height: 15px;
+
+    background-image: url("../images/delete.png");
+    background-repeat: no-repeat;
+
+}
+.add span
+{
+    display: none;
+}
+.add{
+    height: 15px;
+    background-image: url("../images/add.gif");
+    background-repeat: no-repeat;
+}
+
+
+#modal_form {
+    width: auto;
+    height: auto; /* Размеры должны быть фиксированы */
+    border-radius: 5px;
+    border: 3px #000 solid;
+    background: rgba(255, 255, 255, 0.91);
+    position: fixed; /* чтобы окно было в видимой зоне в любом месте */
+    top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
+    left: 50%; /* половина экрана слева */
+    margin-top: -250px;
+    margin-left: -150px; /* тут вся магия центровки css, отступаем влево и вверх минус половину ширины и высоты соответственно =) */
+    display: none; /* в обычном состоянии окна не должно быть */
+    opacity: 0; /* полностью прозрачно для анимирования */
+    z-index: 5; /* окно должно быть наиболее большем слое */
+    padding: 20px 10px;
+}
+/* Кнопка закрыть для тех кто в танке) */
+#modal_form #modal_close {
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    display: block;
+}
+/* Подложка */
+#overlay {
+    z-index: 3; /* подложка должна быть выше слоев элементов сайта, но ниже слоя модального окна */
+    position: fixed; /* всегда перекрывает весь сайт */
+    background-color: #000; /* черная */
+    opacity: 0.8; /* но немного прозрачна */
+    width: 100%;
+    height: 100%; /* размером во весь экран */
+    top: 0;
+    left: 0; /* сверху и слева 0, обязательные свойства! */
+    cursor: pointer;
+    display: none; /* в обычном состоянии её нет) */
+}
+h2{
+    color: #f12536;
+    font-family: AC Line;
+    font-size:28px;
+}
+form{
+    line-height: 0.8em;
+}
+input[type=file] {
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.1s linear color : #f12536;
+}
+
+#login{
+    width: auto;
+    height: auto; /* Размеры должны быть фиксированы */
+    border-radius: 5px;
+    border: 3px #e7efef solid;
+    background: rgba(40, 40, 40, 0.62);
+    position: fixed; /* чтобы окно было в видимой зоне в любом месте */
+    top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
+    left: 50%; /* половина экрана слева */
+    margin-top: -250px;
+    margin-left: -150px; /* тут вся магия центровки css, отступаем влево и вверх минус половину ширины и высоты соответственно =) */
+    padding: 20px 10px;
+    color: #f1f5ef;
+}
+
+.imga{
+    width: 200px;
+    border-radius: 5px;
+
+}
+.img_view{
+    margin: 5px;
+    border-radius: 5px;
+    width: 200px;
+    height:200px;
+
+}
+.price{
+    float: right;
+    border-radius: 5px;
+    border-top-left-radius:30px;
+    color: rgba( 2, 2, 2, 0.95);
+    font-family: corkiregular;
+    text-decoration: none;
+    margin: 10px;
+    padding: 20px;
+    font-size: 25px;
+    border: 2px solid rgba(34, 34, 34, 0.95);
+}
+.href_view{
+    float: right;
+    border-radius: 5px;
+    color: rgba( 2, 2, 2, 0.95);
+    font-family: corkiregular;
+    margin: 10px;
+    padding: 20px;
+    font-size: 25px;
+    border: 2px solid rgba(34, 34, 34, 0.95);
+    border-left: 10px solid rgba(34, 34, 34, 0.95);
+}
+
+.href_view:hover{
+    color:rgba(250, 0, 38, 0.95);
+
+    border: 2px solid rgba(250, 0, 38, 0.95);
+    border-left: 10px solid rgba(250, 0, 38, 0.95);
+
+}
+.right{
+    float: right;
+    width: 700px;
+}
+
+hr{
+
+    color: rgba(241, 49, 77, 0.71);
+    box-shadow:  1px 2px 6px rgba(241, 49, 77, 0.31);;
+
+}
