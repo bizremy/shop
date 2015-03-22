@@ -1,1 +1,1 @@
-sidebar
+<li><a href ="" id="go">Оформить заявку</a></li>

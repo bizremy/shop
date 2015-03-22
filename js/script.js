@@ -1,5 +1,4 @@
 $("addcontent").hide();
-console.log($("body"));
 $("h5").on("click", function (event)
 {
     $(this).next().slideToggle(600);
@@ -166,24 +165,29 @@ $('form[name=createSubCategory]').submit(function()
 
 $('.delete').click(function(e)
 {
-    var a =location.pathname.split("/")
-    var loc=location.origin+"/"+a[1]+"/"+a[2];
-    console.log($(this).parent().parent().remove());
-    $.ajax(
-        {
-            type: "POST",
-            url:   loc+"/delete" ,
-
-            data:{
-                id:e.target.textContent
-            },
-            complete:function()
+    if(location.pathname=="/main/cart"){
+        $(this).parent().parent().remove();
+        getElement();
+    }
+    else {
+        var a = location.pathname.split("/")
+        var loc = location.origin + "/" + a[1] + "/" + a[2];
+        console.log($(this).parent().parent().remove());
+        $.ajax(
             {
-               $(this).parent().parent().remove();
+                type: "POST",
+                url: loc + "/delete",
 
+                data: {
+                    id: e.target.textContent
+                },
+                complete: function () {
+                    $(this).parent().parent().remove();
+
+                }
             }
-        }
-    )
+        )
+    }
 });
 $(document).ready(function() { // вся магия после загрузки страницы
     $('a#go').click( function(event){ // ловим клик по ссылки с id="go"
@@ -278,5 +282,77 @@ $('form[name=updateGoods]').submit(function()
             }
         )
     }
-
 });*/
+
+function cart(id){
+   if(!($.cookie("xid"))){
+       $.cookie("xid",id,{ path: '/'})
+   }
+    else{
+      var xid=$.cookie("xid")+","+id;
+       $.cookie("xid",xid,{ path: '/'})
+   }
+    $("#cartcount").html( $.cookie("xid").split(",").length);
+}
+
+$(document).ready(function() {
+    $("#cartcount").html( $.cookie("xid").split(",").length);
+});
+
+var title = [];
+var price = [];
+var count = [];
+var sum;
+var totalsum;
+var id = [];
+function getElement() {
+    var doc = document;
+    sum=0
+    var length = doc.getElementsByName('title').length;
+    for (var i = 0; i < length; i++) {
+        title[i] = doc.getElementsByName('title')[i].innerText;
+        price[i] = doc.getElementsByName('price')[i].innerText;
+        count[i] = doc.getElementsByName('count')[i].value;
+        id[i] = doc.getElementsByName('id')[i].value;
+        totalsum=count[i]*price[i];
+       doc.getElementsByName('totalsum')[i].innerText=totalsum;
+        sum=sum+totalsum;
+    }
+    $("#sum").html(sum);
+
+}
+
+if(location.pathname=="/main/cart"){
+    getElement();
+
+    $('#cart').change(function(e){
+        getElement();
+    });
+}
+
+$('form[name=setCart]').submit(function()
+{
+
+    var formData = new FormData($(this)[0]);
+    formData.append("id",id);
+    formData.append("price",price);
+    formData.append("quantity",count);
+    formData.append("sum",sum);
+    $.ajax({
+        url: location.origin + "/main/setcart",
+        type: 'POST',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success:function(){
+            $.removeCookie("xid", { path: '/' });
+        }
+    });
+
+
+
+});
+
+
+

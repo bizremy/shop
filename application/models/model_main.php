@@ -35,7 +35,6 @@ on g.id_subcategory = s.id $condition");
         return array('str'=>$str,'title'=>$title,'column'=>$column);
 
     }
-
     public function getSubcategory($id){
         $mysqli =self::getObj();
         if(!empty($id)){
@@ -85,6 +84,52 @@ on g.id_subcategory = s.id $condition");
         $str['description']=$row['description'];
         $title=$row['title'];
         return array('str'=>$str,'title'=>$title);
+    }
+    private function countgoods($cart,$id){
+        $carts=explode(",",$cart);
+        $k=0;
+        foreach($carts as $one){
+            if($id==$one)
+                $k++;
+        }
+        return $k;
+    }
+    public  function  getCart($cart)
+    {
+        if (!empty($cart)) {
+
+        $mysqli = self::getObj();
+        $rows = $mysqli->query("select * from goods where id in($cart)");
+        while ($row = $rows->fetch_assoc()) {
+            $str[$row['id']]['title'] = $row['title'];
+            $str[$row['id']]['price'] = $row['price'];
+               $str[$row['id']]['img_url'] = $row['img_url'];
+            $str[$row['id']]['count'] = $this->countgoods($cart, $row['id']);
+        }
+    }
+        return $str;
+    }
+
+        public function setCart($name,$phone,$email,$adress,$coment,$sum,$id,$price,$quantity){
+            $date= date("Y-m-d H:i");
+
+
+        $mysqli=self::getObj();
+        $mysqli->query("insert into seller(name,address,phone,email,date,sum,coment)
+VALUES('$name','$adress','$phone','$email','$date',$sum,'$coment')");
+            $id_seller=mysqli_insert_id($mysqli);
+        $ids=explode(",",$id);
+        $prices=explode(",",$price);
+        $quantitys=explode(",",$quantity);
+        $values="";
+        for($i=0;$i<count($ids);$i++){
+        $values= $values.'('.$ids[$i].','.$quantitys[$i].','.$prices[$i].','.$id_seller.'),';
+        }
+        $values=substr($values,0,-1);
+        $mysqli->query("insert into sale(id_goods,quantity,price,id_seller)
+VALUES$values");
+
+        return $id_seller;
     }
 
 

@@ -6,10 +6,10 @@
 </head>
 <body>
 	<div id="nav">
-		<ul>
+
             <?php include 'application/views/' . $menu; ?>
-		</ul>
-		
+
+
 	</div>
     <div id="wrap">
 	<div id="main">
@@ -18,7 +18,7 @@
 
 	</div>
 	<div id="sidebar">
-        <h1>боковое меню</h1>
+
 		<ul>
             <?php include 'application/views/' . $column; ?>
 
@@ -29,6 +29,7 @@
 		<p>Нижний колонтитул</p>
 	</div>
       <script src="../../js/jquery-2.1.3.js" type="text/javascript"></script>
+      <script src="../../js/jquery.cookie.js" type="text/javascript"></script>
       <script src="../../js/script.js" type="text/javascript"></script>
    
 </body>

@@ -24,6 +24,22 @@ class controller_main extends Controller {
         $this->view->title=$data[title];
         $this->view->generate('main/view.php',$data);
     }
+    public function action_cart()
+    {
+        $this->view->column='main/column.php';
+        $this->view->title="Корзина";
+        $cart= $_COOKIE['xid'];
+        $data=$this->model->getCart($cart);
+        $this->view->generate('main/cart.php',$data);
+
+    }
+    public function action_setcart(){
+        $this->model->setCart(
+            $_POST['name'], $_POST['phone'], $_POST['email'], $_POST['address'],
+            $_POST['coment'], $_POST['sum'], $_POST['id'], $_POST['price'], $_POST['quantity']
+        );
+
+    }
 
 
 

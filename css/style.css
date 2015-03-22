@@ -41,7 +41,7 @@ body{
     position:absolute;
     margin-top: 0px;
     height: 60px;
-	width: 100%;
+    width: 100%;
 	background-color: rgba(243, 245, 240, 0.47);
     
 		
@@ -171,7 +171,7 @@ th {
 }
 .delete{
     height: 15px;
-
+    cursor: hand;
     background-image: url("../images/delete.png");
     background-repeat: no-repeat;
 
@@ -260,14 +260,17 @@ input[type=file] {
 .imga{
     width: 200px;
     border-radius: 5px;
-
 }
 .img_view{
     margin: 5px;
     border-radius: 5px;
     width: 200px;
     height:200px;
-
+}
+.img_cart{
+    border-radius: 5px;
+    width:60px;
+    height:60px;
 }
 .price{
     float: right;
@@ -282,6 +285,7 @@ input[type=file] {
     border: 2px solid rgba(34, 34, 34, 0.95);
 }
 .href_view{
+    cursor: default;
     float: right;
     border-radius: 5px;
     color: rgba( 2, 2, 2, 0.95);
@@ -295,7 +299,7 @@ input[type=file] {
 
 .href_view:hover{
     color:rgba(250, 0, 38, 0.95);
-
+cursor: hand;
     border: 2px solid rgba(250, 0, 38, 0.95);
     border-left: 10px solid rgba(250, 0, 38, 0.95);
 
@@ -304,10 +308,15 @@ input[type=file] {
     float: right;
     width: 700px;
 }
-
+#small_cart{
+margin: 5px;
+    font-size: 12px;
+    font-family: Arial;
+    color: #000000;
+    float: right;
+}
 hr{
 
     color: rgba(241, 49, 77, 0.71);
     box-shadow:  1px 2px 6px rgba(241, 49, 77, 0.31);;
-
 }
