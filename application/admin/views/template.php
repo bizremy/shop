@@ -11,9 +11,9 @@
         <li><a href="<?php echo HOST;?>/admin/category">Категории</a></li>
         <li><a href="<?php echo HOST;?>/admin/subcategory">Подкатегории</a></li>
         <li><a href="<?php echo HOST;?>/admin/goods">Товары</a></li>
-
+        <li><a href="<?php echo HOST;?>/admin/sale">Заказы</a></li>
     </ul>
-
+    <span id = small_cart><a href='<?php echo HOST;?>/admin/login/logout'>Выйти</a><br></span>
 </div>
 <div id="wrap">
     <div id="main">
@@ -22,9 +22,9 @@
 
     </div>
     <div id="sidebar">
-        <?php include 'application/admin/views/' . $column; ?>
-        <ul>
 
+        <ul>
+            <?php include 'application/admin/views/' . $column; ?>
 
         </ul>
     </div>

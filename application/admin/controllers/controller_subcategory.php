@@ -3,10 +3,15 @@ class controller_subcategory extends Controller
 {
     function __construct()
     {
-
-        $this->model= new model_subcategory();
-        $this->view= new View();
-        $this->view->temlateView='application/admin/views/template.php';
+        session_start();
+        if($_SESSION['admin']=='123') {
+            $this->model = new model_subcategory();
+            $this->view = new View();
+            $this->view->temlateView = 'application/admin/views/template.php';
+        }
+        else{
+            header('Location:'.HOST.'/admin/login');
+        }
     }
     public function action_index()
     {

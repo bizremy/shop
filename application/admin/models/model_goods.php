@@ -57,7 +57,7 @@ $condition");
     }
     public function saveGoods($id,$title,$main,$description,$price,$id_subcategory){
         $mysqli=self::getObj();
-        $mysqli->query("update goods set title='$title',main=$main,description='$description',price=$price,
+        $mysqli->query("update goods set title='$title',main='$main',description='$description',price=$price,
  id_subcategory=$id_subcategory where id=$id");
     }
 public function rule($id){

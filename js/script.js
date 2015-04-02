@@ -5,115 +5,81 @@ $("h5").on("click", function (event)
     var height = $("body").height();
     $("body").animate({"scrollTop": height}, 600);
 });
+if(location.pathname.split("/")[location.pathname.split("/").length-2]=='view'){
+console.log(location);
+    var starsAll = 0;//Всего звезд
+    var voteAll = 0;//Всего голосов
+    var starWidth = 17;//ширина одной звезды
+    var idArticle=location.pathname.split("/")[location.pathname.split("/").length-1];
+    $.ajax({
+        type:"post",
+        dataType: 'json',
+        url:location.origin + "/main/rating",
+        data:{id:idArticle},
+        async: false,
+        success:function(data){
+            starsAll=data.vote;
+            voteAll=data.voters;
+        }
+    });
+    var rating = (starsAll/voteAll); //Старый рейтинг
+    rating = Math.round(rating*100)/100;
+    if(isNaN(rating)){
+        rating = 0;
+    }
+    var ratingResCss = rating*starWidth; //старый рейтинг в пикселях
+    $(".ratDone").css("width", ratingResCss);
+    $(".ratStat").html("Рейтинг: <strong>"+rating+"</strong> Голосов: <strong>"+voteAll+"</strong>");
 
-$('form[name=tov]').submit(function ()
-{
-    $('.error').empty();
-    var flag = true;
-    if ($('input[name=t]').val() === '')
-    {
-        $('form').before("<div class ='error'>Поле название должно быть заполнено</div>");
-        flag = false;
-    }
-    if ($('input[name=d]').val() === '')
-    {
-        $('form').before("<div class ='error'>Поле подробно должно быть заполнено</div>");
-        flag = false;
-    }
 
-    if ($('input[name=p]').val() > 0 && $('input[name=p]').val() < 80000)
-    {
+    var coords;
+    var stars;	//кол-во звезд при наведении
+    var ratingNew;	//Новое количество звезд
+    var x=1;
+if(isNaN($.cookie("rating"))) {
+    $(".rating").mousemove(function (e) {
+        var offset = $(".rating").offset();
+        coords = e.clientX - offset.left; //текушая координата
+        stars = Math.ceil(coords / starWidth);
+        starsCss = stars * starWidth;
+        $(".ratHover").css("width", starsCss).attr("title", stars + " из 10");
+    });
+    $(".rating").mouseout(function () {
+        $(".ratHover").css("width", 0);
+    });
+    $(".rating").click(function () {
+        var starsNew = parseInt(starsAll) + parseInt(stars); //новое количество звезд
+        voteAll++;
+        var ratingNew = starsNew / voteAll;
+        ratingNew = Math.round(ratingNew * 100) / 100;
+        var razn = Math.round((rating - ratingNew) * 200);//вычислям разницу между новым и старым рейтингом для анимации
+        razn = Math.abs(razn);
+        var total = Math.round(ratingNew * starWidth);
 
-    }
-    else
-    {
-        $('form').before("<div class ='error'>Неправильное знаxение цены</div>");
-        flag = false;
-    }
-    if (flag === false)
+        $.ajax({
+            type: "post",
+            url: location.origin + "/main/setrating",
+            data: {
+                id: idArticle,
+                vote: starsNew,
+                voters: voteAll
+            },
+            async: false,
+            success: function () {
+
+                $.cookie("rating","1",{ expires: 31,path:location.pathname});
+                    $(".ratHover").css("display", "none");
+                    $(".ratDone").animate({width: total}, razn);
+                    $(".ratBlocks").show();
+                    $(".ratStat").html("Рейтинг: <strong>" + ratingNew + "</strong> Голосов: <strong>" + voteAll + "</strong>");
+                }
+
+        });
         return false;
 
-});
-
-$('form[name=str]').submit(function ()
-{
-    $('.error').empty();
-    if (getCookie('flag') == 1)
-    {
-        if ($('input[name=quant]').val() > 0 && $('input[name=quant]').val() < 1000 && $('input[name=quant]').val() % 1 == 0)
-        {
-
-        }
-        else
-        {
-            $('form').before("<div class ='error'>Введены некоректные данные</div>");
-            return false;
-        }
-    }
-
-
-    if (getCookie('flag') == 2)
-    {
-
-        var b = [];
-        var c = [];
-        var a = $('.rule').text().split(',');
-
-        for (var i = 0; i < a.length; i++)
-        {
-            b[i] = a[i].split(':');
-            c[b[i][0]] = b[i][1];
-        }
-        var input = $('input[name=quant]').val();
-        var max = c[$('select').val()]*1;
-
-
-
-
-        if (input > 0 && input < 10000 && input % 1 == 0)
-        {
-            if (input>max)
-            {
-                $('form').before("<div class ='error'>На складе нет заданого количества, доступно: "+max+" шт</div>");
-                return false;
-            }
-        }
-
-        else
-        {
-            $('form').before("<div class ='error'>Введены некоректные данные</div>");
-            return false;
-        }
-
-
-
-    }
-
-});
-
-$('form[name=transact]').submit(function()
-{
-
-  // var str=$(this).serialize();
- $.ajax({
-     url: " http://storage/transact/save",
-     type:"POST",
-
-     data:{
-     cust:document.getElementById("cust").value,
-     empl:document.getElementById("empl").value,
-     trans:document.getElementById("trans").value
-     },
-     success:function(html)
-     {
-        $("statusbox").html(html);
-     }
- }
- );
-
-   return false;
-
-});
+    });
+}
+}
 $('form[name=createCategory]').submit(function()
 {
     if($('input[name=title]').val()==="")
@@ -328,31 +294,82 @@ if(location.pathname=="/main/cart"){
     $('#cart').change(function(e){
         getElement();
     });
+
+   /* if(!isNaN($.cookie("id_seller"))){
+        $("#id_seller").html("<h2>Ваш номер заказа "+$.cookie("id_seller")+"</h2>" +
+        " ждите звонка с вами свяжется наш менеджер");
+
+
+    }*/
 }
 
-$('form[name=setCart]').submit(function()
-{
+$('form[name=setCart]').submit(function(event) {
+   $('.error').empty();
+    var errorMsg="";
+    if (title.length < 1) {
+        errorMsg = "Нет товара<br>";
+    }
+    else {
+        if ($('input[name=name]').val().length < 3) {
+            errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
+        }
+        if ($('input[name=phone]').val().length < 3) {
+            errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
+        }
+        if ($('input[name=address]').val().length < 3) {
+            errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
+        }
+    }
+    if (errorMsg.length > 1) {
+        $('form').before("<div class=error>"+errorMsg+"</div>");
+        return false;
+    }
+     else {
+        var formData = new FormData($(this)[0]);
+        formData.append("id", id);
+        formData.append("price", price);
+        formData.append("quantity", count);
+        formData.append("sum", sum);
+        $.ajax({
+            url: location.origin + "/main/setcart",
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data) {
 
-    var formData = new FormData($(this)[0]);
-    formData.append("id",id);
-    formData.append("price",price);
-    formData.append("quantity",count);
-    formData.append("sum",sum);
+                $("#id_seller").html("<h2>Ваш номер заказа "+data+"</h2>" +
+                " ждите звонка с вами свяжется наш менеджер");
+                $.removeCookie("xid", {path: '/'});
+                setTimeout($('#overlay').click(), 100);
+            }
+
+
+
+        });
+        return false;
+
+
+    }
+});
+var k=0;
+$('#goodsView').click(function() {
+    if (k == 0) {
+    $(this).next().slideToggle(600);
     $.ajax({
-        url: location.origin + "/main/setcart",
-        type: 'POST',
-        data: formData,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success:function(){
-            $.removeCookie("xid", { path: '/' });
+        url: location.origin + "/admin/sale/add",
+
+        success: function (html) {
+            $("#results").append(html);
         }
     });
+        k=1;
+}
+    if(k==1){
+        $(this).next().slideToggle(600);
 
-
-
+    }
 });
-
 
 

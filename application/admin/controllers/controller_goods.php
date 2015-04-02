@@ -1,9 +1,15 @@
 <?php
  class controller_goods extends  Controller{
      function __construct(){
-         $this->model = new model_goods();
-         $this->view = new View();
-         $this->view->temlateView='application/admin/views/template.php';
+         session_start();
+         if($_SESSION['admin']=='123') {
+             $this->model = new model_goods();
+             $this->view = new View();
+             $this->view->temlateView = 'application/admin/views/template.php';
+         }
+         else{
+             header('Location:'.HOST.'/admin/login');
+         }
      }
      public function action_index($id)
      {

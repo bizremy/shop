@@ -1,3 +1,4 @@
+<div id="id_seller"></div>
 <table name="cart" id="cart">
     <tr>
 
@@ -10,9 +11,6 @@
 
     </tr>
     <?php
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
 
     if(!empty($data))
     {

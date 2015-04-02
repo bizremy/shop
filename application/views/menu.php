@@ -9,6 +9,8 @@ if(!empty($menu)) {
         echo '<li><a href ="' . HOST . '/main/index/' . $el . '">' . $value . '</a></li>';
     }
     echo "</ul>";
-    echo " <span id = small_cart>Товаров : <span id='cartcount'>0</span>
- <br><a href='$host/main/cart'>Оформить</a></span>";
+    echo "<span id = small_cart>
+
+<a href='$host/main/cart'>
+<img src='/images/cartt.png'  border='0'>Товаров:<span id='cartcount'>0</span></a>";
 }

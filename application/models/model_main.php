@@ -11,7 +11,7 @@ class model_main extends Model {
         }
         else{
             $title='Главная';
-            $condition="";
+            $condition="where id_category=(SELECT id FROM category ORDER BY id LIMIT 1 )";
         }
 
         $rows= $mysqli->query("select g.id,g.title,g.main,g.price,g.id_subcategory,
@@ -112,12 +112,11 @@ on g.id_subcategory = s.id $condition");
 
         public function setCart($name,$phone,$email,$adress,$coment,$sum,$id,$price,$quantity){
             $date= date("Y-m-d H:i");
-
-
         $mysqli=self::getObj();
         $mysqli->query("insert into seller(name,address,phone,email,date,sum,coment)
 VALUES('$name','$adress','$phone','$email','$date',$sum,'$coment')");
             $id_seller=mysqli_insert_id($mysqli);
+
         $ids=explode(",",$id);
         $prices=explode(",",$price);
         $quantitys=explode(",",$quantity);
@@ -126,10 +125,25 @@ VALUES('$name','$adress','$phone','$email','$date',$sum,'$coment')");
         $values= $values.'('.$ids[$i].','.$quantitys[$i].','.$prices[$i].','.$id_seller.'),';
         }
         $values=substr($values,0,-1);
+           /* $newfile=fopen("file.txt","w");
+            fwrite($newfile,"info ".$values." id $id price $price quanyity $quantity");
+            fclose($newfile);*/
         $mysqli->query("insert into sale(id_goods,quantity,price,id_seller)
 VALUES$values");
 
         return $id_seller;
+    }
+    public function getRating($id){
+        $mysqli=self::getObj();
+        $rows= $mysqli->query("select vote,voters from goods where id=$id");
+        $row=$rows->fetch_assoc();
+        $str['vote']=$row['vote'];
+        $str['voters']=$row['voters'];
+        return $str;
+    }
+    public function setRating($id,$vote,$voters){
+        $mysqli=self::getObj();
+        $mysqli->query("update goods set vote=$vote,voters=$voters where id=$id");
     }
 
 
@@ -143,5 +157,4 @@ VALUES$values");
         }
               return $str;
     }
-
 }

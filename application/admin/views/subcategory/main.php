@@ -30,7 +30,7 @@ foreach($data[str] as $el=>$value)
     <h2>Добавить категорию</h2>
     <form method="POST" name="createSubCategory" >
         <p>заголовок подкатегории</p>  <p> <input type=" text" name="title"/></p>
-        <p>категория</p> <p> <select name="id_category" size="3" multiple="multiple">
+        <p>категория</p> <p> <select name="id_category">
                 <?php
                 foreach($data[rule] as $el=>$value){
                     echo "<option value=$el>$value</option>";

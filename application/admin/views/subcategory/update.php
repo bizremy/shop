@@ -5,7 +5,7 @@ echo  "<br>Заголовок категории: ".$data['title']."<br> Под�
 ?>
 <form method="POST" name="updateCategory" action="<?php echo HOST;?>/admin/subcategory/save">
     <p> <input type=" text" name="title"/></p>
-    <p> <select name="id_category" size="3" multiple="multiple">
+    <p> <select name="id_category" >
             <?php
             foreach($data[rule] as $el=>$value){
                 echo "<option  value=$el>$value</option>";

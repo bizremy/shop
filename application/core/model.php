@@ -30,8 +30,6 @@ class Model{
         return self::$mysqli;
     }
 
-
-
     public function getData()
     {
 

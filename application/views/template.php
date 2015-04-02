@@ -26,7 +26,9 @@
 	</div>	
 </div>
 <div id="footer">
-		<p>Нижний колонтитул</p>
+		<p>Kshop магазин современных кальянов</p>
+
+
 	</div>
       <script src="../../js/jquery-2.1.3.js" type="text/javascript"></script>
       <script src="../../js/jquery.cookie.js" type="text/javascript"></script>

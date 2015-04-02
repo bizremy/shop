@@ -1,9 +1,6 @@
 <?php
 class Route
 {
-
-
-
     static function start()
     {
         $controller_name='main';
@@ -51,16 +48,6 @@ class Route
         {
             $controller->$action_name($id);
         }
-
-
     }
-
-
-    /**
-     * @return string
-     */
-
-
-
 }
 

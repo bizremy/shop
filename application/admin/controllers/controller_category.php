@@ -3,10 +3,15 @@ class controller_category extends Controller
 {
     function __construct()
     {
-
+        session_start();
+        if($_SESSION['admin']=='123') {
             $this->model = new model_category();
             $this->view = new View();
             $this->view->temlateView = 'application/admin/views/template.php';
+        }
+        else{
+            header('Location:'.HOST.'/admin/login');
+        }
 
 
     }

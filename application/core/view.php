@@ -14,6 +14,9 @@ class View
         require $this->temlateView;
 
     }
+    public function ajaxGenerate($temlateView,$data){
+        require $temlateView;
+    }
 
 }
 
