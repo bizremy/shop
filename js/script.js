@@ -1,4 +1,76 @@
+if(location.pathname.split("/")[location.pathname.split("/").length-2]=='view'){
+    console.log(location);
+    var starsAll = 0;//Всего звезд
+    var voteAll = 0;//Всего голосов
+    var starWidth = 17;//ширина одной звезды
+    var idArticle=location.pathname.split("/")[location.pathname.split("/").length-1];
+    $.ajax({
+        type:"post",
+        dataType: 'json',
+        url:location.origin + "/main/rating",
+        data:{id:idArticle},
+        async: false,
+        success:function(data){
+            starsAll=data.vote;
+            voteAll=data.voters;
+        }
+    });
+    var rating = (starsAll/voteAll); //Старый рейтинг
+    rating = Math.round(rating*100)/100;
+    if(isNaN(rating)){
+        rating = 0;
+    }
+    var ratingResCss = rating*starWidth; //старый рейтинг в пикселях
+    $(".ratDone").css("width", ratingResCss);
+    $(".ratStat").html("Рейтинг: <strong>"+rating+"</strong> Голосов: <strong>"+voteAll+"</strong>");
+    var coords;
+    var stars;	//кол-во звезд при наведении
+    var ratingNew;	//Новое количество звезд
+    var x=1;
+    if(isNaN($.cookie("rating"))) {
+        $(".rating").mousemove(function (e) {
+            var offset = $(".rating").offset();
+            coords = e.clientX - offset.left; //текушая координата
+            stars = Math.ceil(coords / starWidth);
+            starsCss = stars * starWidth;
+            $(".ratHover").css("width", starsCss).attr("title", stars + " из 10");
+        });
+        $(".rating").mouseout(function () {
+            $(".ratHover").css("width", 0);
+        });
+        $(".rating").click(function () {
+            var starsNew = parseInt(starsAll) + parseInt(stars); //новое количество звезд
+            voteAll++;
+            var ratingNew = starsNew / voteAll;
+            ratingNew = Math.round(ratingNew * 100) / 100;
+            var razn = Math.round((rating - ratingNew) * 200);//вычислям разницу между новым и старым рейтингом для анимации
+            razn = Math.abs(razn);
+            var total = Math.round(ratingNew * starWidth);
 
+            $.ajax({
+                type: "post",
+                url: location.origin + "/main/setrating",
+                data: {
+                    id: idArticle,
+                    vote: starsNew,
+                    voters: voteAll
+                },
+                async: false,
+                success: function () {
+
+                    $.cookie("rating","1",{ expires: 31,path:location.pathname});
+                    $(".ratHover").css("display", "none");
+                    $(".ratDone").animate({width: total}, razn);
+                    $(".ratBlocks").show();
+                    $(".ratStat").html("Рейтинг: <strong>" + ratingNew + "</strong> Голосов: <strong>" + voteAll + "</strong>");
+                }
+
+            });
+            return false;
+
+        });
+    }
+}
 //Корзина
     var title = [];
     var price = [];
@@ -198,79 +270,7 @@ if(location.pathname.split('/')[1]!=='admin'){
 
 
 //Рейтинг Товаров
-if(location.pathname.split("/")[location.pathname.split("/").length-2]=='view'){
-console.log(location);
-    var starsAll = 0;//Всего звезд
-    var voteAll = 0;//Всего голосов
-    var starWidth = 17;//ширина одной звезды
-    var idArticle=location.pathname.split("/")[location.pathname.split("/").length-1];
-    $.ajax({
-        type:"post",
-        dataType: 'json',
-        url:location.origin + "/main/rating",
-        data:{id:idArticle},
-        async: false,
-        success:function(data){
-            starsAll=data.vote;
-            voteAll=data.voters;
-        }
-    });
-    var rating = (starsAll/voteAll); //Старый рейтинг
-    rating = Math.round(rating*100)/100;
-    if(isNaN(rating)){
-        rating = 0;
-    }
-    var ratingResCss = rating*starWidth; //старый рейтинг в пикселях
-    $(".ratDone").css("width", ratingResCss);
-    $(".ratStat").html("Рейтинг: <strong>"+rating+"</strong> Голосов: <strong>"+voteAll+"</strong>");
-    var coords;
-    var stars;	//кол-во звезд при наведении
-    var ratingNew;	//Новое количество звезд
-    var x=1;
-if(isNaN($.cookie("rating"))) {
-    $(".rating").mousemove(function (e) {
-        var offset = $(".rating").offset();
-        coords = e.clientX - offset.left; //текушая координата
-        stars = Math.ceil(coords / starWidth);
-        starsCss = stars * starWidth;
-        $(".ratHover").css("width", starsCss).attr("title", stars + " из 10");
-    });
-    $(".rating").mouseout(function () {
-        $(".ratHover").css("width", 0);
-    });
-    $(".rating").click(function () {
-        var starsNew = parseInt(starsAll) + parseInt(stars); //новое количество звезд
-        voteAll++;
-        var ratingNew = starsNew / voteAll;
-        ratingNew = Math.round(ratingNew * 100) / 100;
-        var razn = Math.round((rating - ratingNew) * 200);//вычислям разницу между новым и старым рейтингом для анимации
-        razn = Math.abs(razn);
-        var total = Math.round(ratingNew * starWidth);
 
-        $.ajax({
-            type: "post",
-            url: location.origin + "/main/setrating",
-            data: {
-                id: idArticle,
-                vote: starsNew,
-                voters: voteAll
-            },
-            async: false,
-            success: function () {
-
-                $.cookie("rating","1",{ expires: 31,path:location.pathname});
-                    $(".ratHover").css("display", "none");
-                    $(".ratDone").animate({width: total}, razn);
-                    $(".ratBlocks").show();
-                    $(".ratStat").html("Рейтинг: <strong>" + ratingNew + "</strong> Голосов: <strong>" + voteAll + "</strong>");
-                }
-
-        });
-        return false;
-
-    });
-}
-}
 //админка
 $('form[name=createCategory]').submit(function () {
     alert("ddd");
@@ -401,6 +401,13 @@ $(document).ready(function() { // вся магия после загрузки 
 });
 
 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61524760-1', 'auto');
+ga('send', 'pageview');
 
 
 

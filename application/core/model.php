@@ -4,6 +4,10 @@ class Model{
 
     public static $mysqli=null;
     private $_db;
+   /* const HOST="mysql.hostinger.com.ua";
+    const USER="u159374684_biz1";
+    const PASSWORD="qKZ5CXkTip";
+    const DB="u159374684_biz1";*/
     const HOST="127.0.0.1";
     const USER="root";
     const PASSWORD="";
