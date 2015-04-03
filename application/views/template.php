@@ -14,7 +14,7 @@
     <div id="wrap">
 	<div id="main">
 	  <?php include 'application/views/' . $contentView; ?>
-	
+
 
 	</div>
 	<div id="sidebar">
@@ -23,7 +23,7 @@
             <?php include 'application/views/' . $column; ?>
 
 		</ul>
-	</div>	
+	</div>
 </div>
 <div id="footer">
 		<p>Kshop магазин современных кальянов</p>

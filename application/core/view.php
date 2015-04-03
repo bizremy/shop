@@ -14,7 +14,7 @@ class View
         require $this->temlateView;
 
     }
-    public function ajaxGenerate($temlateView,$data){
+    public function slide($temlateView,$data=niull){
         require $temlateView;
     }
 

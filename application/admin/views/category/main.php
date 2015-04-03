@@ -24,7 +24,7 @@ foreach($data as $el=>$value)
     <form method="POST" name="createCategory" >
 
         <p>заголовок</p>  <p> <input type=" text" name="title"/></p>
-        <p><input type="submit" value="Добавить"/></p>
+        <p><input class="submit" type="submit" value="Добавить"/></p>
     </form>
 </div>
 <div id="overlay"></div>

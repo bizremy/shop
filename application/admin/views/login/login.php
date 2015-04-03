@@ -4,6 +4,6 @@
     <p> <input type=" text" name="login"  /></p>
     <p>Пароль</p>
     <p>  <input type=" text" name="pass" /></p>
-    <p><input type="submit" value="войти"/></p>
+    <p><input class="submit" type="submit" value="войти"/></p>
 </form>
 </div>

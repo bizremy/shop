@@ -5,22 +5,24 @@ class controller_main extends Controller {
         $this->view = new View();
         $this->view->temlateView = 'application/views/template.php';
     }
-
-    public function action_index($id) {
+    public function action_index() {
+        $this->view->title="Главная";
+        $this->view->temlateView = 'application/views/slider/template.php';
+        $this->view->generate('slider/slider.php');
+    }
+    public function action_category($id) {
         $data = $this->model->getData($id);
         $this->view->title=$data[title];
-        $this->view->generate('main/main.php',$data);
-
+        $this->view->generate('main/category.php',$data);
     }
     public function action_subcategory($id){
         $data=$this->model->getSubcategory($id);
         $this->view->title=$data[title];
-        $this->view->generate('main/main.php',$data);
+        $this->view->generate('main/category.php',$data);
     }
     public function action_view($id){
         $data=$this->model->getView($id);
         $this->view->title=$data[title];
-         $a=00000;
         $this->view->generate('main/view.php',$data);
     }
 

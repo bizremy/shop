@@ -15,7 +15,7 @@ class model_main extends Model {
         }
 
         $rows= $mysqli->query("select g.id,g.title,g.main,g.price,g.id_subcategory,
-g.img_url,s.title as title_subcategory,  s.id_category
+g.img_url,s.title as title_subcategory,  s.id_category,g.vote,g.voters
 from goods g left   join subcategory s
 on g.id_subcategory = s.id $condition");
         while($row=$rows->fetch_assoc()){
@@ -26,6 +26,8 @@ on g.id_subcategory = s.id $condition");
             $str[$row['id']]['description']=$row['description'];
             $str[$row['id']]['title_subcategory']=$row['title_subcategory'];
             $str[$row['id']]['id_category']=$row['id_category'];
+            $str[$row['id']]['vote']=$row['vote'];
+            $str[$row['id']]['voters']=$row['voters'];
         }
         $rows=$mysqli->query("select * from subcategory $condition");
         while($row=$rows->fetch_assoc()){
@@ -50,7 +52,7 @@ on g.id_subcategory = s.id $condition");
         }
 
         $rows= $mysqli->query("select g.id,g.title,g.price,g.id_subcategory,
-g.img_url,s.title as title_subcategory,  s.id_category,g.main
+g.img_url,s.title as title_subcategory,  s.id_category,g.main,g.vote,g.voters
 from goods g left   join subcategory s
 on g.id_subcategory = s.id $condition");
         while($row=$rows->fetch_assoc()){
@@ -61,6 +63,8 @@ on g.id_subcategory = s.id $condition");
             $str[$row['id']]['description']=$row['description'];
             $str[$row['id']]['title_subcategory']=$row['title_subcategory'];
             $str[$row['id']]['id_category']=$row['id_category'];
+            $str[$row['id']]['vote']=$row['vote'];
+            $str[$row['id']]['voters']=$row['voters'];
 
         }
         $rows=$mysqli->query("select * from subcategory

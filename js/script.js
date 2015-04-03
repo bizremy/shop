@@ -1,10 +1,203 @@
-$("addcontent").hide();
-$("h5").on("click", function (event)
-{
-    $(this).next().slideToggle(600);
-    var height = $("body").height();
-    $("body").animate({"scrollTop": height}, 600);
-});
+
+//Корзина
+    var title = [];
+    var price = [];
+    var count = [];
+    var sum;
+    var totalsum;
+    var id = [];
+
+    function getElement() {
+        var doc = document;
+        sum = 0
+        var length = doc.getElementsByName('title').length;
+        for (var i = 0; i < length; i++) {
+            title[i] = doc.getElementsByName('title')[i].innerText;
+            price[i] = doc.getElementsByName('price')[i].innerText;
+            count[i] = doc.getElementsByName('count')[i].value;
+            id[i] = doc.getElementsByName('id')[i].value;
+            totalsum = count[i] * price[i];
+            doc.getElementsByName('totalsum')[i].innerText = totalsum;
+            sum = sum + totalsum;
+        }
+        $("#sum").html(sum);
+
+    }
+
+    if (location.pathname == "/main/cart") {
+        getElement();
+
+        $('#cart').change(function (e) {
+            getElement();
+        });
+
+    }
+
+    $('form[name=setCart]').submit(function (event) {
+        $('.error').empty();
+        var errorMsg = "";
+        if (title.length < 1) {
+            errorMsg = "Нет товара<br>";
+        }
+        else {
+            if ($('input[name=name]').val().length < 3) {
+                errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=phone]').val().length < 3) {
+                errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=address]').val().length < 3) {
+                errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
+            }
+        }
+        if (errorMsg.length > 1) {
+            $('form').before("<div class=error>" + errorMsg + "</div>");
+            return false;
+        }
+        else {
+            var formData = new FormData($(this)[0]);
+            formData.append("id", id);
+            formData.append("price", price);
+            formData.append("quantity", count);
+            formData.append("sum", sum);
+            $.ajax({
+                url: location.origin + "/main/setcart",
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+
+                    $("#id_seller").html("<h2>Ваш номер заказа " + data + "</h2>" +
+                    " ждите звонка с вами свяжется наш менеджер");
+                    $.removeCookie("xid", {path: '/'});
+                    setTimeout($('#overlay').click(), 100);
+                }
+
+
+            });
+            return false;
+
+
+        }
+    });
+    $('form[name=setCart]').submit(function (event) {
+        $('.error').empty();
+        var errorMsg = "";
+        if (title.length < 1) {
+            errorMsg = "Нет товара<br>";
+        }
+        else {
+            if ($('input[name=name]').val().length < 3) {
+                errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=phone]').val().length < 3) {
+                errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=address]').val().length < 3) {
+                errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
+            }
+        }
+        if (errorMsg.length > 1) {
+            $('form').before("<div class=error>" + errorMsg + "</div>");
+            return false;
+        }
+        else {
+            var formData = new FormData($(this)[0]);
+            formData.append("id", id);
+            formData.append("price", price);
+            formData.append("quantity", count);
+            formData.append("sum", sum);
+            $.ajax({
+                url: location.origin + "/main/setcart",
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+
+                    $("#id_seller").html("<h2>Ваш номер заказа " + data + "</h2>" +
+                    " ждите звонка с вами свяжется наш менеджер");
+                    $.removeCookie("xid", {path: '/'});
+                    setTimeout($('#overlay').click(), 100);
+                }
+
+
+            });
+            return false;
+
+
+        }
+    });
+    function cart(id) {
+        if (!($.cookie("xid"))) {
+            $.cookie("xid", id, {path: '/'})
+        }
+        else {
+            var xid = $.cookie("xid") + "," + id;
+            $.cookie("xid", xid, {path: '/'})
+        }
+        $("#cartcount").html($.cookie("xid").split(",").length);
+    }
+
+if(location.pathname.split('/')[1]!=='admin'){
+    $("#cartcount").html($.cookie("xid").split(",").length);
+}
+
+    $('form[name=setCart]').submit(function (event) {
+        $('.error').empty();
+        var errorMsg = "";
+        if (title.length < 1) {
+            errorMsg = "Нет товара<br>";
+        }
+        else {
+            if ($('input[name=name]').val().length < 3) {
+                errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=phone]').val().length < 3) {
+                errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
+            }
+            if ($('input[name=address]').val().length < 3) {
+                errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
+            }
+        }
+        if (errorMsg.length > 1) {
+            $('form').before("<div class=error>" + errorMsg + "</div>");
+            return false;
+        }
+        else {
+            var formData = new FormData($(this)[0]);
+            formData.append("id", id);
+            formData.append("price", price);
+            formData.append("quantity", count);
+            formData.append("sum", sum);
+            $.ajax({
+                url: location.origin + "/main/setcart",
+                type: 'POST',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+
+                    $("#id_seller").html("<h2>Ваш номер заказа " + data + "</h2>" +
+                    " ждите звонка с вами свяжется наш менеджер");
+                    $.removeCookie("xid", {path: '/'});
+                    setTimeout($('#overlay').click(), 100);
+                }
+
+
+            });
+            return false;
+
+
+        }
+    });
+
+
+//Рейтинг Товаров
 if(location.pathname.split("/")[location.pathname.split("/").length-2]=='view'){
 console.log(location);
     var starsAll = 0;//Всего звезд
@@ -30,8 +223,6 @@ console.log(location);
     var ratingResCss = rating*starWidth; //старый рейтинг в пикселях
     $(".ratDone").css("width", ratingResCss);
     $(".ratStat").html("Рейтинг: <strong>"+rating+"</strong> Голосов: <strong>"+voteAll+"</strong>");
-
-
     var coords;
     var stars;	//кол-во звезд при наведении
     var ratingNew;	//Новое количество звезд
@@ -80,45 +271,41 @@ if(isNaN($.cookie("rating"))) {
     });
 }
 }
-$('form[name=createCategory]').submit(function()
-{
-    if($('input[name=title]').val()==="")
-    return false;
+//админка
+$('form[name=createCategory]').submit(function () {
+    alert("ddd");
+    if ($('input[name=title]').val() === "")
+        return false;
     else {
-
         $.ajax(
             {
                 type: "POST",
-                url:   location.origin + "/admin/category/create",
-
-                data:{
-                    title:document.createCategory.title.value
+                url: location.origin + "/admin/category/create",
+                data: {
+                    title: document.createCategory.title.value
                 },
-                complete:function(data)
-                {
+                complete: function (data) {
                     $('form').before("<div class ='error'>поле добавлено data</div>");
                 }
             }
         )
     }
 });
-$('form[name=createSubCategory]').submit(function()
-{
-    if($('input[name=title]').val()==="")
+$('form[name=createSubCategory]').submit(function () {
+    if ($('input[name=title]').val() === "")
         return false;
     else {
 
         $.ajax(
             {
                 type: "POST",
-                url:   location.origin + "/admin/subcategory/create",
+                url: location.origin + "/admin/subcategory/create",
 
-                data:{
-                    id_category:document.createSubCategory.id_category.value,
-                    title:document.createSubCategory.title.value
+                data: {
+                    id_category: document.createSubCategory.id_category.value,
+                    title: document.createSubCategory.title.value
                 },
-                complete:function(data)
-                {
+                complete: function (data) {
                     $('form').before("<div class ='error'>поле добавлено data</div>");
                 }
             }
@@ -127,11 +314,8 @@ $('form[name=createSubCategory]').submit(function()
 
 });
 
-
-
-$('.delete').click(function(e)
-{
-    if(location.pathname=="/main/cart"){
+$('.delete').click(function (e) {
+    if (location.pathname == "/main/cart") {
         $(this).parent().parent().remove();
         getElement();
     }
@@ -155,6 +339,45 @@ $('.delete').click(function(e)
         )
     }
 });
+
+var flag = false;
+var filesExt = ['jpg', 'gif', 'png']; // массив расширений
+$('input[type=file]').change(function () {
+
+    $('.error').empty();
+    var parts = $(this).val().split('.');
+    if ((filesExt.join().search(parts[parts.length - 1]) != -1) && (this.files[0].size < 1024 * 1024)) {
+        $('input[type=file]').after("Изображение добавлено");
+        flag == true;
+    } else {
+        $('input[type=file]').after("Загрузите изображение, размером  до 1мб");
+        flag = false;
+    }
+});
+$('form[name=createGoods]').submit(function () {
+    if ($('input[name=title]').val() === "" || $('input[name=price]').val() === "" || flag === false) {
+        $('input[name=title]').before("<div class ='error'>не все основные поля добавлены</div>");
+        return false;
+    }
+    else {
+
+        var formData = new FormData($(this)[0]);
+        formData.append("description", CKEDITOR.instances.editor1.getData())
+        $.ajax({
+            url: location.origin + "/admin/goods/create",
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function () {
+                $('form[name=createGoods]').close();
+            }
+        });
+
+    }
+});
+//модальное окно
 $(document).ready(function() { // вся магия после загрузки страницы
     $('a#go').click( function(event){ // ловим клик по ссылки с id="go"
         event.preventDefault(); // выключаем стандартную роль элемента
@@ -177,199 +400,14 @@ $(document).ready(function() { // вся магия после загрузки 
     });
 });
 
-var filesExt = ['jpg', 'gif', 'png']; // массив расширений
-$('input[type=file]').change(function(){
-    $('.error').empty();
-    var parts = $(this).val().split('.');
-    if((filesExt.join().search(parts[parts.length - 1]) != -1) &&  (this.files[0].size<1024*1024)){
-        $('input[type=file]').after("<div class ='error'>Изображение добавлено</div>");
-    } else {
-        $('input[type=file]').after("<div class ='error'>Загрузите изображение, размером  до 1мб</div>");
-    }
-});
-$('form[name=createGoods]').submit(function()
-{
-    if($('input[name=title]').val()==="" || $('input[name=price]').val()==="" )
-       return false;
-    else {
-
-        var formData = new FormData($(this)[0]);
-        formData.append("description",CKEDITOR.instances.editor1.getData())
-        $.ajax({
-            url: location.origin + "/admin/goods/create",
-            type: 'POST',
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success:function(){
-                $('form[name=createGoods]').close();
-            }
-        });
-
-    }
-});
-
-$('form[name=updateGoods]').submit(function()
-{
-    if($('input[name=title]').val()==="" || $('input[name=price]').val()==="" )
-        return false;
-    else {
-        var formData = new FormData($(this)[0]);
-        formData.append("description",CKEDITOR.instances.editor1.getData())
-        $.ajax({
-            url: location.origin + "/admin/goods/save",
-            type: 'POST',
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success:function(){
-                document.location.href=location.origin + "/admin/goods";
-            }
-        });
-
-    }
-});
-
-/*$('form[name=addGoods]').submit(function()
-{
-
-    if($('input[name=quanttiti]').val()==="")
-        return false;
-    else {
-        var formData = new FormData($(this)[0]);
-        $.ajax(
-            {
-                type: "POST",
-                url:   location.origin + "/admin/goods/add",
-                data: formData
-
-            }
-        )
-    }
-});*/
-
-function cart(id){
-   if(!($.cookie("xid"))){
-       $.cookie("xid",id,{ path: '/'})
-   }
-    else{
-      var xid=$.cookie("xid")+","+id;
-       $.cookie("xid",xid,{ path: '/'})
-   }
-    $("#cartcount").html( $.cookie("xid").split(",").length);
-}
-
-$(document).ready(function() {
-    $("#cartcount").html( $.cookie("xid").split(",").length);
-});
-
-var title = [];
-var price = [];
-var count = [];
-var sum;
-var totalsum;
-var id = [];
-function getElement() {
-    var doc = document;
-    sum=0
-    var length = doc.getElementsByName('title').length;
-    for (var i = 0; i < length; i++) {
-        title[i] = doc.getElementsByName('title')[i].innerText;
-        price[i] = doc.getElementsByName('price')[i].innerText;
-        count[i] = doc.getElementsByName('count')[i].value;
-        id[i] = doc.getElementsByName('id')[i].value;
-        totalsum=count[i]*price[i];
-       doc.getElementsByName('totalsum')[i].innerText=totalsum;
-        sum=sum+totalsum;
-    }
-    $("#sum").html(sum);
-
-}
-
-if(location.pathname=="/main/cart"){
-    getElement();
-
-    $('#cart').change(function(e){
-        getElement();
-    });
-
-   /* if(!isNaN($.cookie("id_seller"))){
-        $("#id_seller").html("<h2>Ваш номер заказа "+$.cookie("id_seller")+"</h2>" +
-        " ждите звонка с вами свяжется наш менеджер");
-
-
-    }*/
-}
-
-$('form[name=setCart]').submit(function(event) {
-   $('.error').empty();
-    var errorMsg="";
-    if (title.length < 1) {
-        errorMsg = "Нет товара<br>";
-    }
-    else {
-        if ($('input[name=name]').val().length < 3) {
-            errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
-        }
-        if ($('input[name=phone]').val().length < 3) {
-            errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
-        }
-        if ($('input[name=address]').val().length < 3) {
-            errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
-        }
-    }
-    if (errorMsg.length > 1) {
-        $('form').before("<div class=error>"+errorMsg+"</div>");
-        return false;
-    }
-     else {
-        var formData = new FormData($(this)[0]);
-        formData.append("id", id);
-        formData.append("price", price);
-        formData.append("quantity", count);
-        formData.append("sum", sum);
-        $.ajax({
-            url: location.origin + "/main/setcart",
-            type: 'POST',
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-
-                $("#id_seller").html("<h2>Ваш номер заказа "+data+"</h2>" +
-                " ждите звонка с вами свяжется наш менеджер");
-                $.removeCookie("xid", {path: '/'});
-                setTimeout($('#overlay').click(), 100);
-            }
 
 
 
-        });
-        return false;
 
 
-    }
-});
-var k=0;
-$('#goodsView').click(function() {
-    if (k == 0) {
-    $(this).next().slideToggle(600);
-    $.ajax({
-        url: location.origin + "/admin/sale/add",
 
-        success: function (html) {
-            $("#results").append(html);
-        }
-    });
-        k=1;
-}
-    if(k==1){
-        $(this).next().slideToggle(600);
 
-    }
-});
+
+
 
 

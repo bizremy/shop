@@ -43,7 +43,7 @@
         <p> <input type=" text" name="address" size="40" /></p>
         <p>Коментарий</p>
        <p> <textarea name="coment" cols="40" rows="3"></textarea></p>
-        <p><input type="submit" value="добавить"/></p>
+        <p><input class="submit" type="submit" value="добавить"/></p>
         <div id="preview"></div>
     </form>
 </div>

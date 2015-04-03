@@ -38,7 +38,7 @@ foreach($data[str] as $el=>$value)
                 ?>
 
             </select></p>
-        <p><input type="submit" value="добавить"/></p>
+        <p><input class="submit"  type="submit" value="добавить"/></p>
     </form>
 </div>
 <div id="overlay"></div>

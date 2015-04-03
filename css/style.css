@@ -1,27 +1,26 @@
 
 @font-face {
     font-family: 'AC Line';
-    src: url('fonts/ac_line.eot');
-    src: url('fonts/ac_line.eot?#iefix') format('embedded-opentype'),
-    url('fonts/ac_line.woff') format('woff'),
-    url('fonts/ac_line.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('fonts/ac_line.ttf') format('truetype');
 }
 @font-face {
     font-family: 'corkiregular';
-    src: url('fonts/corki-regular.eot');
-    src: url('fonts/corki-regular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/corki-regular.woff') format('woff'),
-    url('fonts/corki-regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src:url('fonts/corki-regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'roboto';
+    src:url('fonts/roboto.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'sans';
+    src:url('fonts/sans.ttf') format('truetype');
 }
 body{
     margin:0;
     padding:0;
-    color:#070707;
-    background: linear-gradient(to top left, purple, rgb(237, 20, 36), rgb(19, 57, 70), #ba6c04);
+    color: #2a2a2a;
+    background: linear-gradient(to top left, purple, rgb(232, 33, 44), rgb(19, 57, 70), #e7a025);
+    background-image: url("/images/7.jpg");
     background-attachment: fixed;
     background-size: cover;
 
@@ -29,19 +28,33 @@ body{
 	}
 #wrap {
 
-    width:1310px;
+    width:1240px;
     margin:0 auto;
     background:rgba(255, 255, 255, 0);
-     padding-top: 100px;
+     padding-top: 65px;
 	}
+#wrapmain {
+    padding-top: 60px;
+
+}
+#mainmain{
+    font:  15px sans;
+    color: #f4f4f4;
+
+}
+#mainmain h2{
+    color: #f11b2d;
+    font: 25px corkiregular;
+
+}
 #nav {
     font-family: AC Line;
     position:absolute;
     margin-top: 0px;
     height: 60px;
     width: 100%;
-	background-color: rgba(243, 245, 240, 0.47);
-    
+	background-color: rgba(17, 19, 17, 0.27);
+
 		
     }
 #nav ul {
@@ -62,9 +75,10 @@ body{
     
     }
 #nav li a{
+    font-weight:550;
 	text-decoration: none;
-	color: #1f2324;
-	font-size: 28px;
+	color: #eef2ec;
+	font-size: 29px;
 	height: 60px;
     padding: 0px 10px;
 	display: block;
@@ -79,13 +93,14 @@ body{
 
 
 #main {
-    min-height: 482px;
-    color: #232423;
+    font:  15px sans;
+    color: #292929;
+    min-height: 517px;
     margin-top:5px;
     float:right;
-    width:950px;
+    width:930px;
     padding:20px;
-    background: rgba(243, 245, 240, 0.92);
+    background: rgba(243, 245, 240, 0.36);
     border-radius: 5px;
     box-shadow: 5px 6px 8px rgba(28, 28, 28, 0.88);
     }
@@ -93,11 +108,12 @@ body{
 #sidebar {
     font-family: corkiregular;
     float:left;
-    margin: 20px auto auto 20px;
+    margin: 5px auto auto 0px;
 	border-radius: 3px;
-	width: 260px;
+	width: 265px;
 	height: auto;
-	background-color: rgba(243, 245, 240, 0.18);
+	background-color: rgba(36, 37, 42, 0.23);
+
     }
 #sidebar ul{
     list-style: none;
@@ -108,7 +124,7 @@ body{
 #sidebar li a{
     
 	text-decoration:none;
-	color:#f1f5ef;
+	color: #e4e8e2;
 	font-size: 19px;
 	height: 40px;
 	padding: 0px 5px;
@@ -117,14 +133,16 @@ body{
 	border:solid 1px   rgba( 229, 229, 229, 0.186 );
 }
 #sidebar li a:hover{
-    padding-right: 5px;
-    background: rgba(243, 245, 240, 0.85);
-    color: #181818;
-    border:solid 1px rgba(241, 49, 77, 0.64);
+
+
+    background-color: rgba(36, 37, 42, 0.29);
+    color: #f6faf4;
+
 
 }
 #sidebar h1
 {
+    color: rgba(235, 240, 232, 0.98);;
     font-family: AC Line;
     text-align:  center;
 	font-size: 24px;
@@ -132,15 +150,16 @@ body{
     padding: 0px;
 	line-height: 35px;
 
-	border:solid 1px   rgba( 234, 234, 234, 0.606 );
+    background-color: rgba(36, 37, 42, 0.33);
 }
 #footer {
+    font: 13px sans;
     text-align:  center;
     position: relative;
     margin-top: -50px; /* negative value of footer height */
     height: 50px;
     clear:both;
-    background:rgba(23, 23, 23, 0.55);
+    background: rgba(38, 38, 38, 0.90);
     color: rgba(240, 240, 240, 0.94);
     }
 
@@ -186,11 +205,11 @@ table, td, th {
     height: auto; /* Размеры должны быть фиксированы */
     border-radius: 5px;
     border: 3px #000 solid;
-    background: rgba(255, 255, 255, 0.91);
+    background: rgba(255, 255, 255, 0.89);
     position: fixed; /* чтобы окно было в видимой зоне в любом месте */
     top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
     left: 50%; /* половина экрана слева */
-    margin-top: -250px;
+    margin-top: -300px;
     margin-left: -150px; /* тут вся магия центровки css, отступаем влево и вверх минус половину ширины и высоты соответственно =) */
     display: none; /* в обычном состоянии окна не должно быть */
     opacity: 0; /* полностью прозрачно для анимирования */
@@ -221,9 +240,9 @@ table, td, th {
     display: none; /* в обычном состоянии её нет) */
 }
 h2{
-    color: #f12536;
+    color: #f1050b;
     font-family: AC Line;
-    font-size:28px;
+    font-size:30px;
 }
 form{
     line-height: 0.8em;
@@ -257,7 +276,7 @@ input[type=file] {
 }
 .img_view{
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 115px;
     width: 200px;
     height:200px;
 }
@@ -276,7 +295,7 @@ input[type=file] {
     margin: 10px;
     padding: 20px;
     font-size: 25px;
-    border: 2px solid rgba(34, 34, 34, 0.95);
+    border: 1px solid rgba(34, 34, 34, 0.95);
 }
 .href_view{
     cursor: default;
@@ -288,16 +307,16 @@ input[type=file] {
     padding: 20px;
     font-size: 25px;
     text-decoration: none;
-    border: 2px solid rgba(34, 34, 34, 0.95);
-    border-left: 10px solid rgba(34, 34, 34, 0.95);
+    border: 1px solid rgba(34, 34, 34, 0.95);
+    border-left: 4px solid rgba(34, 34, 34, 0.95);
     background:inherit;
 }
 
 .href_view:hover{
     color:rgba(250, 0, 38, 0.95);
 cursor: hand;
-    border: 2px solid rgba(250, 0, 38, 0.95);
-    border-left: 10px solid rgba(250, 0, 38, 0.95);
+    border: 1px solid rgba(250, 0, 38, 0.95);
+    border-left: 4px solid rgba(250, 0, 38, 0.95);
 
 }
 .right{
@@ -307,16 +326,17 @@ cursor: hand;
 #small_cart {
     margin: 2px;
     font-size: 12px;
-    font-family: arial;
+    font-family: sans;
     float: right;
-    border: 1px solid #5a5a5a;
+    border: 1px solid #979797;
     padding: 6px;
     border-radius: 5px;
+
 }
 
 #small_cart a {
     text-decoration: none;
-    color: #202020;
+    color: #d4d4d4;
     padding: 35px 2px 5px 2px;
 }
 
@@ -337,7 +357,6 @@ hr{
 .rating{
     width:170px;
     height: 25px;
-
 }
 
 .ratBlocks{
@@ -350,7 +369,7 @@ hr{
     width:170px;
     background: url(/images/stars.png) repeat-x 0 0;
     height: 25px;
-
+    margin-top:25px;
 }
 
 .ratDone{
@@ -366,6 +385,165 @@ hr{
     margin-top:-25px;
 }
 .ratStat{
+    color: #2d2d2d;
     font-family: corkiregular;
-    font-size: 21px;
+    font-size: 19px;
+    margin:10px 0 10px 0;
+
 }
+input {
+    font: 13px sans;
+    padding: 6px 0 4px 10px;
+    border: 1px solid #cecece;
+    background: rgba(246, 246, 246, 0.80);
+    border-radius: 8px;
+}
+.submit {
+    cursor: pointer;
+    border: 1px solid #cecece;
+    background: #f6f6f6;
+    box-shadow: inset 0px 20px 20px #ffffff;
+    border-radius: 8px;
+    padding: 8px 14px;
+    width: 120px;
+}
+.submit:hover {
+    box-shadow: inset 0px -20px 20px #ffffff;
+    border: 1px solid rgba(241, 27, 45, 0.15);
+}
+.submit:active {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    zoom: 1;
+}
+textarea {
+    /* = Убираем скролл */
+    overflow: auto;
+
+    /* = Убираем увеличение */
+    resize: none;
+    width: 300px;
+    height: 50px;
+
+    /* = Добавим фон, рамку, отступ*/
+    background: #f6f6f6;
+    border: 1px solid #cecece;
+    border-radius: 8px 0 0 0;
+    padding: 8px 0 8px 10px;
+}
+#header
+{
+    margin: 0;
+    padding: 14em 0 16em 0;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+#header header h1
+{
+    font: 3em ac line;
+    line-height: 1.25em;
+    margin-bottom: 0;
+}
+
+#header header p
+{
+    margin-top: 1.25em;
+    font-weight: 100;
+    padding: 0;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+
+/*********************************************************************************/
+/* Main Sections                                                                 */
+/*********************************************************************************/
+
+.main
+{
+    position: relative;
+    margin: 0;
+}
+
+.main > header
+{
+    color: #292929;
+    background: #fff;
+    text-align: center;
+    padding: 1em 0 1em 0;
+    margin: 0;
+}
+.container{
+    font-size: 20px;
+    color: #6d6d6d;
+}
+.container h3{
+    font-size: 30px;
+    color: #6d6d6d;
+    font-family: ac "ac line";
+}
+.main>header a{
+    font-size: 18px;
+    color: #e1e1e1;
+    text-decoration:none;
+    border-bottom: dotted 1px #e1e1e1;
+}
+.main>header a{
+    font-size: 18px;
+    color: #dcdcdc;
+    text-decoration:none;
+    border-bottom: dotted 1px #e1e1e1;
+}
+.main>header a:hover{
+    font-size: 18px;
+    color: #fcfcfc;
+    text-decoration:none;
+    border-bottom: none;
+}
+.main>header p{
+
+    margin: 0 60px;
+}
+
+#co1{
+    color: #e1e1e1;
+    float: left;
+    width: 33%;
+}
+#co2{
+    color: #e1e1e1;
+    float: left;
+    width: 33%;
+
+}
+#co3{
+    color: #e1e1e1;
+    float: right;
+    width: 33%;
+
+}
+.button
+{
+    margin: 10px 0 20px 0;
+    position: relative;
+    display: inline-block;
+    background: rgba(231, 231, 231, 0.1);
+    padding: 0.85em 3em 0.85em 3em;
+    border-radius: 0.55em;
+    border: 1px solid rgba(248, 248, 248, 0.45);
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.55s ease-in-out;
+}
+.button:hover
+{
+    background: rgba(231, 231, 231, 0.25);
+}
+
+

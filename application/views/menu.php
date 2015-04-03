@@ -6,11 +6,11 @@ $host-HOST;
 if(!empty($menu)) {
     echo "<ul>";
     foreach ($menu as $el => $value) {
-        echo '<li><a href ="' . HOST . '/main/index/' . $el . '">' . $value . '</a></li>';
+        echo '<li><a href ="' . HOST . '/main/category/' . $el . '">' . $value . '</a></li>';
     }
     echo "</ul>";
     echo "<span id = small_cart>
 
 <a href='$host/main/cart'>
-<img src='/images/cartt.png'  border='0'>Товаров:<span id='cartcount'>0</span></a>";
+<img src='/images/cart1.png'  border='0'/>Товаров:<span id='cartcount'>0</span></a>";
 }

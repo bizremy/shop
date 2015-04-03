@@ -32,28 +32,27 @@ $value =$data[str];
             <th>Стоимость</th>
             <th>Количество</th>
             <th>Сумма</th>
-            <th>Удалить</th>
+
 
         </tr>
         <?php
         if(!empty($data[strSale]))
         {
-            foreach($data[strSale] as $el=>$value)
+            $totalsum=0;
+            foreach($data[strSale] as $el=>$value) {
+                $totalsum+=$value[price] * $value[quantity];
                 echo "<tr><td name=title>$value[title]</td>
           <td><img class=img_cart src=/$value[img_url]></td>
           <td name=price>$value[price]</td>
           <input type=hidden name=id value=$el>
-          <td><input type='text' name=count value=$value[quantity] size=2></td>
-          <td name=totalsum>".$value[price]*$value[quantity]."</td>
-<td><div class='delete'><span>$el</span></div></td>
+          <td>$value[quantity]</td>
+          <td name=totalsum>" . $value[price] * $value[quantity] . "</td>
 </tr>";
+            }
         }
         else
             echo 'нет товаров в корзине'
         ?>
-        <tr><td colspan=6>К оплате:<span id="sum"></span></td></tr>
+        <tr><td colspan=6>К оплате:<span id="sum"><?echo $totalsum;?></span></td></tr>
     </table>
-    <div id="goodsView">Добавить товар</div>
-    <div id="results">
 
-    </div>

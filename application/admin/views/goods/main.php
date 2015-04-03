@@ -5,11 +5,9 @@
         <th>Цена</th>
         <th>Подкатегория</th>
         <th>Удалить</th>
-        <th>Добавить</th>
         <th>Обновить</th>
     </tr>
     <?php
-
     if(!empty($data[str]))
     {
         foreach($data[str] as $el=>$value)
@@ -18,7 +16,6 @@
             <td>$value[price]</td>
              <td>$value[stitle]</td>
 <td><div class='delete'><span>$el</span></div></td>
-<td><a href='$host/admin/goods/addgoods/$el'><img src='/images/add.gif' /></a></td>
 <td><a href='$host/admin/goods/update/$el'><img src='/images/update.png' /></a></td>
 </tr>";
     }
@@ -52,7 +49,7 @@
             CKEDITOR.replace( 'editor1');
         </script>
 
-        <input type="submit" value="добавить"/>
+        <input class="submit" type="submit" value="добавить"/>
         <div id="preview"></div>
     </form>
 </div>
