@@ -154,55 +154,7 @@ if(location.pathname.split("/")[location.pathname.split("/").length-2]=='view'){
 
         }
     });
-    $('form[name=setCart]').submit(function (event) {
-        $('.error').empty();
-        var errorMsg = "";
-        if (title.length < 1) {
-            errorMsg = "Нет товара<br>";
-        }
-        else {
-            if ($('input[name=name]').val().length < 3) {
-                errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
-            }
-            if ($('input[name=phone]').val().length < 3) {
-                errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
-            }
-            if ($('input[name=address]').val().length < 3) {
-                errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
-            }
-        }
-        if (errorMsg.length > 1) {
-            $('form').before("<div class=error>" + errorMsg + "</div>");
-            return false;
-        }
-        else {
-            var formData = new FormData($(this)[0]);
-            formData.append("id", id);
-            formData.append("price", price);
-            formData.append("quantity", count);
-            formData.append("sum", sum);
-            $.ajax({
-                url: location.origin + "/main/setcart",
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function (data) {
 
-                    $("#id_seller").html("<h2>Ваш номер заказа " + data + "</h2>" +
-                    " ждите звонка с вами свяжется наш менеджер");
-                    $.removeCookie("xid", {path: '/'});
-                    setTimeout($('#overlay').click(), 100);
-                }
-
-
-            });
-            return false;
-
-
-        }
-    });
     function cart(id) {
         if (!($.cookie("xid"))) {
             $.cookie("xid", id, {path: '/'})
@@ -218,62 +170,11 @@ if(location.pathname.split('/')[1]!=='admin'){
     $("#cartcount").html($.cookie("xid").split(",").length);
 }
 
-    $('form[name=setCart]').submit(function (event) {
-        $('.error').empty();
-        var errorMsg = "";
-        if (title.length < 1) {
-            errorMsg = "Нет товара<br>";
-        }
-        else {
-            if ($('input[name=name]').val().length < 3) {
-                errorMsg += "Поле имя должно содержаать минимум 3 сивола<br>";
-            }
-            if ($('input[name=phone]').val().length < 3) {
-                errorMsg += "Поле телефон должно содержаать минимум 3 сивола<br>";
-            }
-            if ($('input[name=address]').val().length < 3) {
-                errorMsg += "Поле адресс должно содержаать минимум 3 сивола<br>";
-            }
-        }
-        if (errorMsg.length > 1) {
-            $('form').before("<div class=error>" + errorMsg + "</div>");
-            return false;
-        }
-        else {
-            var formData = new FormData($(this)[0]);
-            formData.append("id", id);
-            formData.append("price", price);
-            formData.append("quantity", count);
-            formData.append("sum", sum);
-            $.ajax({
-                url: location.origin + "/main/setcart",
-                type: 'POST',
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-
-                    $("#id_seller").html("<h2>Ваш номер заказа " + data + "</h2>" +
-                    " ждите звонка с вами свяжется наш менеджер");
-                    $.removeCookie("xid", {path: '/'});
-                    setTimeout($('#overlay').click(), 100);
-                }
 
 
-            });
-            return false;
-
-
-        }
-    });
-
-
-//Рейтинг Товаров
 
 //админка
 $('form[name=createCategory]').submit(function () {
-    alert("ddd");
     if ($('input[name=title]').val() === "")
         return false;
     else {
@@ -347,7 +248,7 @@ $('input[type=file]').change(function () {
     $('.error').empty();
     var parts = $(this).val().split('.');
     if ((filesExt.join().search(parts[parts.length - 1]) != -1) && (this.files[0].size < 1024 * 1024)) {
-        $('input[type=file]').after("Изображение добавлено");
+        $('input[type=file]').after("добавлено");
         flag == true;
     } else {
         $('input[type=file]').after("Загрузите изображение, размером  до 1мб");
@@ -355,7 +256,8 @@ $('input[type=file]').change(function () {
     }
 });
 $('form[name=createGoods]').submit(function () {
-    if ($('input[name=title]').val() === "" || $('input[name=price]').val() === "" || flag === false) {
+    if ($('input[name=title]').val() === "" || $('input[name=price]').val() === "") {
+        $('.error').empty();
         $('input[name=title]').before("<div class ='error'>не все основные поля добавлены</div>");
         return false;
     }
@@ -372,6 +274,27 @@ $('form[name=createGoods]').submit(function () {
             processData: false,
             success: function () {
                 $('form[name=createGoods]').close();
+            }
+        });
+
+    }
+});
+$('form[name=updateGoods]').submit(function()
+{
+    if($('input[name=title]').val()==="" || $('input[name=price]').val()==="" )
+        return false;
+    else {
+        var formData = new FormData($(this)[0]);
+        formData.append("description",CKEDITOR.instances.editor1.getData())
+        $.ajax({
+            url: location.origin + "/admin/goods/save",
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success:function(){
+                document.location.href=location.origin + "/admin/goods";
             }
         });
 
@@ -401,13 +324,7 @@ $(document).ready(function() { // вся магия после загрузки 
 });
 
 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-61524760-1', 'auto');
-ga('send', 'pageview');
 
 
 

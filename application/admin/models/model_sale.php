@@ -62,10 +62,11 @@ on s.id=g.id_subcategory
         }
         return $str;
     }
-    public function deleteGoods($id)
+    public function deleteSale($id)
     {
         $mysqli=self::getObj();
-        $mysqli->query("delete from goods where id=$id");
+        $mysqli->query("delete from sale where id_seller=$id");
+        $mysqli->query("delete from seller where id=$id");
     }
 
 

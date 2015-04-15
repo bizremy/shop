@@ -12,6 +12,6 @@ echo  "<br>Заголовок категории: ".$data['title']."<br> Под�
             }
             ?>
         </select></p>
-    <input type="hidden" name="id" value="<?php echo $data['id'];?>"/>
+    <input type="hidden" name="id" value="<?php echo $data[id];?>"/>
     <p> <input type="submit" value="Изменить"/></p>
 </form>

@@ -4,8 +4,6 @@ if(!empty($data['img_url'])){
     echo "<p><img src='/$data[img_url]' class='imga'/></p>";
 }
 ?>
-
-
 <form method="POST" name="updateGoods"   enctype=multipart/form-data >
     <p>заголовок товара/цена/подкатегория</p>
     <input type="hidden" name="id" value="<?php echo $data['id'];?>"/>

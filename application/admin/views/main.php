@@ -1,4 +1,1 @@
-<a href=""></a>
-<?php
-//echo '<a href='.HOST.'/admin/login/logout>Выйти</a><br>';
-echo "Roman ".$data;
+<h2>Добро пожаловать в меню администратора</h2>

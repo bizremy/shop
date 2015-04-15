@@ -24,8 +24,17 @@ $condition");
         require_once 'model_category.php';
         $category = new model_category();
         $menu=$category->getCategory();
-
-        $rule=$this->rule($id);
+        if(!empty($id)){
+            $conditionRule="where  c.id=$id";
+        }
+        $rows= $mysqli->query("select s.id,s.title,c.id as ctitle from subcategory s
+left join category c on
+s.id_category=c.id $conditionRule");
+        if(!empty($rows)) {
+            while ($row = $rows->fetch_assoc()) {
+                $rule[$row['id']] = $row['title'];
+            }
+        }
         return array('str'=>$str,'menu'=>$menu,'rule'=>$rule);
     }
     public function createGoods($title,$main,$description,$price,$id_subcategory,$img_url)
@@ -62,8 +71,7 @@ $condition");
     }
 public function rule($id){
     if(!empty($id)){
-
-        $conditionRule="where  c.id=$id";
+        $conditionRule="where  s.id=$id";
     }
     $mysqli=self::getObj();
     $rows= $mysqli->query("select s.id,s.title,c.title as ctitle from subcategory s

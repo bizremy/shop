@@ -17,8 +17,7 @@ class controller_main extends Controller{
     {
 
             $this->view->title = "Админка";
-            $data = $this->model->getAdmin();
-            $this->view->generate('main.php', $data);
+            $this->view->generate('main.php');
 
 
     }

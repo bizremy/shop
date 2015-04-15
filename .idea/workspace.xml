@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/application/admin/models/model_goods.php" line="70" mnemonic="4" />
+    <bookmark url="file://$PROJECT_DIR$/application/admin/models/model_goods.php" line="78" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f1f0785-8fd5-44b1-8126-70b936b95fc0" name="Default" comment="" />
@@ -38,58 +38,44 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9473684" vertical-offset="5959" max-vertical-offset="7668">
-              <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.53271025" vertical-offset="4356" max-vertical-offset="6174">
+              <caret line="261" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scrolly.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/scrolly.js">
+      <file leaf-file-name="controller_subcategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_subcategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="918">
+              <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
+      <file leaf-file-name="model_subcategory.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/models/model_subcategory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="8551" max-vertical-offset="9990">
-              <caret line="504" column="23" selection-start-line="504" selection-start-column="23" selection-end-line="504" selection-end-column="23" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="990">
+              <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+              <folding>
+                <marker date="1428094319636" expanded="true" signature="150:249" placeholder="select s.id,..subcategory..." />
+                <marker date="1428094319636" expanded="true" signature="726:799" placeholder="insert into ..." />
+                <marker date="1428094319636" expanded="true" signature="914:947" placeholder="delete from ..." />
+                <marker date="1428094319636" expanded="true" signature="1072:1183" placeholder="select s.id,..subcategory..." />
+                <marker date="1428094319636" expanded="true" signature="1610:1682" placeholder="update subca..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="slider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/slider/slider.php">
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/views/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="918">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="162">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/slider/template.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="720">
-              <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -98,9 +84,88 @@
       <file leaf-file-name="model.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/core/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="972">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="972">
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/views/goods/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1170">
+              <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+              <folding>
+                <marker date="1428047792446" expanded="true" signature="284:546" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scrolly.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/scrolly.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="180">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_goods.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/admin/models/model_goods.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1908">
+              <caret line="4" column="24" selection-start-line="3" selection-start-column="0" selection-end-line="38" selection-end-column="5" />
+              <folding>
+                <marker date="1428159399822" expanded="true" signature="237:386" placeholder="select g.id,..goods..." />
+                <marker date="1428159399822" expanded="true" signature="976:1073" placeholder="select s.id,..subcategory..." />
+                <marker date="1428159399822" expanded="true" signature="1468:1616" placeholder="insert into ..." />
+                <marker date="1428159399822" expanded="true" signature="1725:1752" placeholder="delete from ..." />
+                <marker date="1428159399822" expanded="true" signature="1871:1953" placeholder="select id,ti..goods..." />
+                <marker date="1428159399822" expanded="true" signature="2453:2580" placeholder="update goods..." />
+                <marker date="1428159399822" expanded="true" signature="2744:2844" placeholder="select s.id,..subcategory..." />
+                <marker date="1428159399822" expanded="true" signature="3109:3137" placeholder="select *from..goods..." />
+                <marker date="1428159399822" expanded="true" signature="3354:3449" placeholder="insert into ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="180">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/model_main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3060">
+              <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
+              <folding>
+                <marker date="1427973417118" expanded="true" signature="214:250" placeholder="select title..category..." />
+                <marker date="1427973417118" expanded="true" signature="517:707" placeholder="select g.id,..goods..." />
+                <marker date="1427973417118" expanded="true" signature="1330:1356" placeholder="select * fro..subcategory..." />
+                <marker date="1427973417118" expanded="true" signature="1731:1770" placeholder="select title..subcategory..." />
+                <marker date="1427973417118" expanded="true" signature="1973:2163" placeholder="select g.id,..goods..." />
+                <marker date="1427973417118" expanded="true" signature="2787:2882" placeholder="select * fro..subcategory..." />
+                <marker date="1427973417118" expanded="true" signature="2833:2878" placeholder="select id_ca..subcategory..." />
+                <marker date="1427973417118" expanded="true" signature="3162:3191" placeholder="select * fro..goods..." />
+                <marker date="1427973417118" expanded="true" signature="3867:3905" placeholder="select * fro..goods..." />
+                <marker date="1427973417118" expanded="true" signature="4439:4566" placeholder="insert into ..." />
+                <marker date="1427973417118" expanded="true" signature="5123:5181" placeholder="insert into ..." />
+                <marker date="1427973417118" expanded="true" signature="5325:5364" placeholder="select vote,..goods..." />
+                <marker date="1427973417118" expanded="true" signature="5613:5665" placeholder="update goods..." />
+                <marker date="1427973417118" expanded="true" signature="5782:5804" placeholder="select * fro..category..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,30 +180,18 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/admin/views/login/template.php" />
-        <option value="$PROJECT_DIR$/application/admin/controllers/controller_login.php" />
-        <option value="$PROJECT_DIR$/application/admin/views/column.php" />
         <option value="$PROJECT_DIR$/application/models/menu.php" />
         <option value="$PROJECT_DIR$/application/controllers/controller_subcategory.php" />
-        <option value="$PROJECT_DIR$/application/admin/views/goods/update.php" />
         <option value="$PROJECT_DIR$/application/views/main/column.php" />
         <option value="$PROJECT_DIR$/application/views/main/setcart.php" />
         <option value="$PROJECT_DIR$/file.txt" />
         <option value="$PROJECT_DIR$/application/bootstrap.php" />
         <option value="$PROJECT_DIR$/application/core/route.php" />
-        <option value="$PROJECT_DIR$/application/admin/views/subcategory/update.php" />
-        <option value="$PROJECT_DIR$/application/admin/views/main.php" />
-        <option value="$PROJECT_DIR$/application/admin/controllers/controller_main.php" />
         <option value="$PROJECT_DIR$/application/admin/controllers/controller_category.php" />
-        <option value="$PROJECT_DIR$/application/admin/controllers/controller_goods.php" />
         <option value="$PROJECT_DIR$/application/admin/controllers/controller_sele.php" />
         <option value="$PROJECT_DIR$/application/admin/models/model_sele.php" />
         <option value="$PROJECT_DIR$/application/admin/views/template.php" />
-        <option value="$PROJECT_DIR$/application/admin/models/model_sale.php" />
         <option value="$PROJECT_DIR$/application/admin/views/sale/add.php" />
-        <option value="$PROJECT_DIR$/application/admin/controllers/controller_sale.php" />
-        <option value="$PROJECT_DIR$/application/admin/models/model_goods.php" />
-        <option value="$PROJECT_DIR$/application/admin/controllers/controller_subcategory.php" />
         <option value="$PROJECT_DIR$/application/views/column.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/views/main/view.php" />
@@ -154,18 +207,30 @@
         <option value="$PROJECT_DIR$/src/skdslider.css" />
         <option value="$PROJECT_DIR$/application/views/main/category.php" />
         <option value="$PROJECT_DIR$/application/views/menu.php" />
-        <option value="$PROJECT_DIR$/application/views/main/cart.php" />
         <option value="$PROJECT_DIR$/application/admin/views/login/login.php" />
         <option value="$PROJECT_DIR$/application/admin/views/category/main.php" />
-        <option value="$PROJECT_DIR$/application/admin/views/subcategory/main.php" />
         <option value="$PROJECT_DIR$/application/admin/views/goods/main.php" />
-        <option value="$PROJECT_DIR$/application/views/slider/template.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/application/core/model.php" />
         <option value="$PROJECT_DIR$/application/views/slider/slider.php" />
-        <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/application/admin/models/model_main.php" />
+        <option value="$PROJECT_DIR$/application/admin/controllers/controller_main.php" />
+        <option value="$PROJECT_DIR$/application/admin/controllers/controller_sale.php" />
+        <option value="$PROJECT_DIR$/application/admin/models/model_sale.php" />
+        <option value="$PROJECT_DIR$/application/views/main/cart.php" />
+        <option value="$PROJECT_DIR$/application/admin/views/subcategory/main.php" />
+        <option value="$PROJECT_DIR$/js/jquery.scrolly.min.js" />
+        <option value="$PROJECT_DIR$/application/views/slider/template.php" />
+        <option value="$PROJECT_DIR$/application/admin/controllers/controller_goods.php" />
+        <option value="$PROJECT_DIR$/application/admin/views/goods/update.php" />
+        <option value="$PROJECT_DIR$/application/admin/views/subcategory/update.php" />
+        <option value="$PROJECT_DIR$/application/admin/controllers/controller_subcategory.php" />
+        <option value="$PROJECT_DIR$/application/admin/models/model_subcategory.php" />
+        <option value="$PROJECT_DIR$/application/core/model.php" />
+        <option value="$PROJECT_DIR$/application/admin/views/main.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/js/scrolly.js" />
+        <option value="$PROJECT_DIR$/application/admin/models/model_goods.php" />
+        <option value="$PROJECT_DIR$/js/script.js" />
       </list>
     </option>
   </component>
@@ -202,6 +267,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -217,20 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="kshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kshop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uploads" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,7 +378,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kshop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,11 +428,10 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../brain" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.general" />
     <property name="options.splitter.main.proportions" value="0.20445736" />
@@ -436,7 +513,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -478,27 +555,25 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="49" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/update.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
+    <entry file="file://$PROJECT_DIR$/js/scrolly.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="324">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/views/subcategory/column.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/models/model_category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3233831" vertical-offset="3" max-vertical-offset="792">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -516,24 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/subcategory/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8461537" vertical-offset="0" max-vertical-offset="396">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.73077" vertical-offset="45" max-vertical-offset="792">
           <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/models/model_sale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="778" max-vertical-offset="1404">
-          <caret line="59" column="54" selection-start-line="59" selection-start-column="54" selection-end-line="59" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -544,60 +605,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/goods/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.846154" vertical-offset="0" max-vertical-offset="612">
-          <caret line="20" column="67" selection-start-line="20" selection-start-column="67" selection-end-line="20" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_goods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.9615383" vertical-offset="423" max-vertical-offset="1116">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/models/model_subcategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="990">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_sale.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="972">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_subcategory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="918">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.112676054" vertical-offset="0" max-vertical-offset="639">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/models/model_goods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.653846" vertical-offset="837" max-vertical-offset="1764">
-          <caret line="59" column="23" selection-start-line="59" selection-start-column="23" selection-end-line="60" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,20 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.692307" vertical-offset="0" max-vertical-offset="504">
           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/models/model_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14084508" vertical-offset="0" max-vertical-offset="639">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/model_main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3060">
-          <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
         </state>
       </provider>
     </entry>
@@ -654,13 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.307693" vertical-offset="94" max-vertical-offset="720">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056338027" vertical-offset="0" max-vertical-offset="639">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -727,27 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main/column.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="828">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main/cart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.26923" vertical-offset="361" max-vertical-offset="1026">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/views/login/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.1538463" vertical-offset="0" max-vertical-offset="252">
@@ -759,20 +728,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.961538" vertical-offset="27" max-vertical-offset="666">
           <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/subcategory/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.346153" vertical-offset="217" max-vertical-offset="882">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/views/goods/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.0" vertical-offset="450" max-vertical-offset="1170">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -790,58 +745,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/core/model.php">
+    <entry file="file://$PROJECT_DIR$/application/views/slider/slider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="972">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="918">
+          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53521127" vertical-offset="0" max-vertical-offset="639">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/models/model_category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30985916" vertical-offset="0" max-vertical-offset="792">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/models/model_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0769231" vertical-offset="0" max-vertical-offset="198">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_sale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.038462" vertical-offset="99" max-vertical-offset="738">
+          <caret line="33" column="47" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/models/model_sale.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-43.96154" vertical-offset="117" max-vertical-offset="1422">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/subcategory/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4773083" vertical-offset="217" max-vertical-offset="882">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="9325" max-vertical-offset="9990">
+          <caret line="504" column="23" selection-start-line="504" selection-start-column="23" selection-end-line="504" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/slider/template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="720">
-          <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.7581169" vertical-offset="37" max-vertical-offset="702">
+          <caret line="28" column="72" selection-start-line="28" selection-start-column="72" selection-end-line="28" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.112676054" vertical-offset="0" max-vertical-offset="1026">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/goods/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14610389" vertical-offset="0" max-vertical-offset="616">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/subcategory/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="396">
+          <caret line="14" column="61" selection-start-line="14" selection-start-column="61" selection-end-line="14" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="828">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/column.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="39" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5032467" vertical-offset="338" max-vertical-offset="1134">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/models/model_subcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="351" max-vertical-offset="990">
+          <caret line="45" column="72" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
+          <folding>
+            <marker date="1428094319636" expanded="true" signature="150:249" placeholder="select s.id,..subcategory..." />
+            <marker date="1428094319636" expanded="true" signature="726:799" placeholder="insert into ..." />
+            <marker date="1428094319636" expanded="true" signature="914:947" placeholder="delete from ..." />
+            <marker date="1428094319636" expanded="true" signature="1072:1183" placeholder="select s.id,..subcategory..." />
+            <marker date="1428094319636" expanded="true" signature="1610:1682" placeholder="update subca..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controllers/controller_subcategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="918">
+          <caret line="37" column="51" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="972">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/goods/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1170">
+          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+          <folding>
+            <marker date="1428047792446" expanded="true" signature="284:546" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/model_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="3060">
+          <caret line="54" column="77" selection-start-line="54" selection-start-column="77" selection-end-line="54" selection-end-column="77" />
+          <folding>
+            <marker date="1427973417118" expanded="true" signature="214:250" placeholder="select title..category..." />
+            <marker date="1427973417118" expanded="true" signature="517:707" placeholder="select g.id,..goods..." />
+            <marker date="1427973417118" expanded="true" signature="1330:1356" placeholder="select * fro..subcategory..." />
+            <marker date="1427973417118" expanded="true" signature="1731:1770" placeholder="select title..subcategory..." />
+            <marker date="1427973417118" expanded="true" signature="1973:2163" placeholder="select g.id,..goods..." />
+            <marker date="1427973417118" expanded="true" signature="2787:2882" placeholder="select * fro..subcategory..." />
+            <marker date="1427973417118" expanded="true" signature="2833:2878" placeholder="select id_ca..subcategory..." />
+            <marker date="1427973417118" expanded="true" signature="3162:3191" placeholder="select * fro..goods..." />
+            <marker date="1427973417118" expanded="true" signature="3867:3905" placeholder="select * fro..goods..." />
+            <marker date="1427973417118" expanded="true" signature="4439:4566" placeholder="insert into ..." />
+            <marker date="1427973417118" expanded="true" signature="5123:5181" placeholder="insert into ..." />
+            <marker date="1427973417118" expanded="true" signature="5325:5364" placeholder="select vote,..goods..." />
+            <marker date="1427973417118" expanded="true" signature="5613:5665" placeholder="update goods..." />
+            <marker date="1427973417118" expanded="true" signature="5782:5804" placeholder="select * fro..category..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/views/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="616">
+          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="162">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/slider/slider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="279" max-vertical-offset="918">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="8551" max-vertical-offset="9990">
-          <caret line="504" column="23" selection-start-line="504" selection-start-column="23" selection-end-line="504" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="180">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/scrolly.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-          <caret line="6" column="76" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/models/model_goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1908">
+          <caret line="4" column="24" selection-start-line="3" selection-start-column="0" selection-end-line="38" selection-end-column="5" />
+          <folding>
+            <marker date="1428159399822" expanded="true" signature="237:386" placeholder="select g.id,..goods..." />
+            <marker date="1428159399822" expanded="true" signature="976:1073" placeholder="select s.id,..subcategory..." />
+            <marker date="1428159399822" expanded="true" signature="1468:1616" placeholder="insert into ..." />
+            <marker date="1428159399822" expanded="true" signature="1725:1752" placeholder="delete from ..." />
+            <marker date="1428159399822" expanded="true" signature="1871:1953" placeholder="select id,ti..goods..." />
+            <marker date="1428159399822" expanded="true" signature="2453:2580" placeholder="update goods..." />
+            <marker date="1428159399822" expanded="true" signature="2744:2844" placeholder="select s.id,..subcategory..." />
+            <marker date="1428159399822" expanded="true" signature="3109:3137" placeholder="select *from..goods..." />
+            <marker date="1428159399822" expanded="true" signature="3354:3449" placeholder="insert into ..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9473684" vertical-offset="5959" max-vertical-offset="7668">
-          <caret line="403" column="0" selection-start-line="403" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.53271025" vertical-offset="4356" max-vertical-offset="6174">
+          <caret line="261" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
           <folding />
         </state>
       </provider>

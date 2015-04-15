@@ -33,9 +33,10 @@
      }
      public function action_save()
      {
-         $this->model->saveGoods($_POST['id'],$_POST["title"],$_POST["main"],$_POST['description'],
+        $this->model->saveGoods($_POST['id'],$_POST["title"],$_POST["main"],$_POST['description'],
             $_POST['price'],$_POST['id_subcategory']);
-         echo '<meta http-equiv="refresh" content="0; url='.HOST.'/admin/goods"">';
+
+      //   echo '<meta http-equiv="refresh" content="0; url='.HOST.'/admin/goods"">';
 
      }
      public function action_delete()

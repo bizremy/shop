@@ -27,23 +27,10 @@ class controller_sale extends  Controller
         $this->view->generate("sale/view.php", $data);
 
     }
-    public function action_add(){
 
-        $data=$this->model->goods();
-        $this->view->ajaxGenerate("application/admin/views/sale/add.php",$data);
-       // $this->view->temlateView = 'application/admin/views/sale/add.php';
-       // $this->view->generate("sale/add.php", $data);
-    }
-
-    public function action_update($id)
-    {
-        $this->view->title = "Изменить поле";
-        $data = $this->model->updateSele($id);
-        $this->view->generate("sele/update.php", $data);
-    }
 
     public function action_delete()
     {
-        $this->model->deleteSele($_POST['id']);
+        $this->model->deleteSale($_POST['id']);
     }
 }

@@ -35,7 +35,7 @@ class controller_subcategory extends Controller
     {
         $host=HOST;
         $this->model->saveSubCategory($_POST['id'],$_POST['title'],$_POST['id_category']);
-        header("url=$host/admin/subcategory");
+        header("location:$host/admin/subcategory");
 
     }
     public function action_delete()

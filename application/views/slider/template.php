@@ -27,7 +27,6 @@
 </div>
 <script src="../../js/jquery-2.1.3.js" type="text/javascript"></script>
 <script src="../../js/jquery.cookie.js" type="text/javascript"></script>
-<script src="../../js/jquery.scrolly.min.js" type="text/javascript"></script>
 <script src="../../js/scrolly.js" type="text/javascript"></script>
 
 

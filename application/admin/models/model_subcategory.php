@@ -43,7 +43,7 @@ s.id_category=c.id where s.id=$id");
     }
     public function saveSubCategory($id,$title,$id_category){
         $mysqli=self::getObj();
-        $mysqli->query("update subcategory set title='$title',id_categoty=$id_category where id=$id");
+        $mysqli->query("update subcategory set title='$title',id_category=$id_category where id=$id");
     }
 
 

@@ -27,7 +27,7 @@ foreach($data[str] as $el=>$value)
 
 <div id="modal_form">
     <span id="modal_close">X</span>
-    <h2>Добавить категорию</h2>
+    <h2>Добавить подкатегорию</h2>
     <form method="POST" name="createSubCategory" >
         <p>заголовок подкатегории</p>  <p> <input type=" text" name="title"/></p>
         <p>категория</p> <p> <select name="id_category">
